@@ -1,0 +1,23 @@
+thead {
+    color: #337AB7
+}
+
+button.btn-primary {
+  position: relative;
+  top: 0;
+  left: 375px;
+}
+
+.form-check-input {
+    position: relative;
+    margin-top: .3rem;
+    margin-left: 0.03rem;
+}
+
+.no-user{
+  position: relative;
+  margin-top: .30rem;
+  right: -450px;
+  color: #337AB7
+
+}
