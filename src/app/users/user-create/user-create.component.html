@@ -4,7 +4,7 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputEmail4">Email</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name= "email"  ngModel email="true" required maxlength="35"
+        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name= "email" data-testid="email-input"  ngModel email="true" required maxlength="35"
         required #emailField="ngModel"
         [class.field-error]="form.submitted && emailField.invalid">
         <div [hidden]="!form.submitted || emailField.valid"
@@ -14,7 +14,7 @@
       </div>
       <div class="form-group col-md-6">
         <label for="inputusername">Username</label>
-        <input type="username" class="form-control" id="inputusername" name= "username"  placeholder="Username" ngModel  required maxlength="35"
+        <input type="username" class="form-control" id="inputusername" name= "username" data-testid="user-input" placeholder="Username" ngModel  required maxlength="35"
         required #nameField="ngModel" 
         [class.field-error]="form.submitted && nameField.invalid">
         <div [hidden]="!form.submitted || nameField.valid"
@@ -25,7 +25,7 @@
     </div>
     <div class="form-group">
       <label for="inputAddress">Address</label>
-      <input type="text" class="form-control" id="inputAddress" name= "address" placeholder="1234 Main St" ngModel  required maxlength="50"
+      <input type="text" class="form-control" id="inputAddress" name= "address" data-testid="address-input" placeholder="1234 Main St" ngModel  required maxlength="50"
       required #addressField="ngModel"
       [class.field-error]="form.submitted && addressField.invalid">
       <div [hidden]="!form.submitted || addressField.valid"
@@ -34,12 +34,12 @@
     </div>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" name = "active" id="flexCheckCheckedDisabled" ngModel="true" >
+      <input class="form-check-input" type="checkbox" name = "active" id="flexCheckCheckedDisabled" data-testid="checkbox" ngModel="true" >
       <label class="form-check-label" for="flexCheckCheckedDisabled">
        Active
       </label>
     </div>
-    <button type="submit" class="btn btn-primary" >Create</button>
+    <button type="submit" class="btn btn-primary" data-testid="create-button" >Create</button>
   </form> 
-  <button type="submit" class="btn btn-secondary"  [routerLink] ="['/users']">Cancel</button>
+  <button type="submit" class="btn btn-secondary" data-testid="cancel-button"  [routerLink] ="['/users']">Cancel</button>
 </div>

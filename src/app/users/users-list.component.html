@@ -4,18 +4,18 @@
   </div>
   <div class='card-body'>
     <div class='row'>
-      <div class='col-md-2'>Search by:</div>
+      <div class='col-md-2' >Search by:</div>
       <div class='col-md-4'>
-        <input type='text'
+        <input type='text'  data-testid="search-input"
         [(ngModel)]='listFilter' />
       </div>
       <div class='col-md-3'>
-        <button class='btn btn-primary' [routerLink] ="['/user/create']" >
+        <button class='btn btn-primary' [routerLink] ="['/user/create']" data-testid="create-user-button" >
         Create User
       </button></div>
     </div>
     <div class='row'>
-      <div class='col-md-6'>
+      <div class='col-md-6' data-testid="search-result">
         <h4>Search by: {{listFilter}} </h4>
       </div>
     </div> 
@@ -23,35 +23,35 @@
       <table class='table' *ngIf='users && users.length'>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Address</th>
-            <th>Active</th>
+            <th data-testid="column-name" >Name</th>
+            <th data-testid="column-email" >Email</th>
+            <th data-testid="column-address" >Address</th>
+            <th data-testid="column-active" >Active</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor= 'let user of filteredUsers'>
+          <tr *ngFor= "let user of filteredUsers ;  let i = index"  id ="row{{1+i}}">
               <td>
-                <a [routerLink] ="['/users', user.id]">
+                <a [routerLink] ="['/users', user.id]" data-testid="row-name" >
                   {{user.username}}
               </a>
             </td>
-              <td>{{user.email}}</td>
-              <td>{{user.address}}</td>
+              <td data-testid="row-email">{{user.email}}</td>
+              <td data-testid="row-adress" >{{user.address}}</td>
               <td> <div class="form-check">
                 <form #form = "ngForm">  
-                <input type="checkbox"  (click)="updateActiveProprietyUser(user.id,user.active)" name="active"  [(ngModel)]="user.active" class="form-check-input" >
+                <input type="checkbox"  (click)="updateActiveProprietyUser(user.id,user.active)" name="active" data-testid="row-checkbox" [(ngModel)]="user.active" class="form-check-input" >
                 <label class="form-check-label" for="ActiveCheck"></label>
                 </form> 
               </div></td>
-              <td><button type="button" class="btn btn-danger" (click)="deleteUser(user.id)">Delete 
+              <td><button type="button" class="btn btn-danger" data-testid="delete-button" (click)="deleteUser(user.id)">Delete 
               </button>
             </td>
         </tbody>
       </table>
     </div>
 </div>
-<div id="noUser" *ngIf="users.length === 0"><h3 class="no-user">
+<div id="noUser" *ngIf="users.length === 0"><h3 class="no-user" data-testid="no users text">
   No users were found 
   </h3>

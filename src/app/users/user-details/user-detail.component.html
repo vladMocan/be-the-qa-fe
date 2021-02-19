@@ -4,7 +4,7 @@
     <div class="form-row">
       <div class="form-group col-md-7">
         <label for="inputEmail4">Email</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name= "email" [(ngModel)]="SelectedUser && SelectedUser.email" email="true"
+        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name= "email" data-testid="email-input-edit" [(ngModel)]="SelectedUser && SelectedUser.email" email="true"
         required #emailField="ngModel" required maxlength="35"
         [class.field-error]="form.submitted && emailField.invalid">
         <div [hidden]="!form.submitted || emailField.valid"
@@ -14,7 +14,7 @@
       </div>
       <div class="form-group col-md-7">
         <label for="inputusername">Username</label>
-        <input type="username" class="form-control" id="inputusername" name= "username"  placeholder="Username"  [(ngModel)]="SelectedUser && SelectedUser.username"
+        <input type="username" class="form-control" id="inputusername" name= "username"  placeholder="Username"  data-testid="user-input-edit" [(ngModel)]="SelectedUser && SelectedUser.username"
         required #nameField="ngModel" required maxlength="25"
         [class.field-error]="form.submitted && nameField.required">
         <div [hidden]="!form.submitted || nameField.valid"
@@ -25,7 +25,7 @@
     </div>
     <div class="form-group ">
       <label for="inputAddress">Address</label>
-      <input type="text" class="form-control" id="inputAddress" name= "address" placeholder="1234 Main St"  [(ngModel)]="SelectedUser && SelectedUser.address" name="address"
+      <input type="text" class="form-control" id="inputAddress" name= "address" placeholder="1234 Main St" data-testid="user-address-edit"  [(ngModel)]="SelectedUser && SelectedUser.address" name="address"
       required #addressField="ngModel" required maxlength="50"
       [class.field-error]="form.submitted && addressField.invalid">
       <div [hidden]="!form.submitted || addressField.valid"
@@ -34,12 +34,12 @@
     </div>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" name = "active" id="flexCheckCheckedDisabled" [(ngModel)]="SelectedUser && SelectedUser.active" >
+      <input class="form-check-input" type="checkbox" name = "active" id="flexCheckCheckedDisabled" data-testid="user-checkbox-edit" [(ngModel)]="SelectedUser && SelectedUser.active" >
       <label class="form-check-label" for="flexCheckCheckedDisabled">
        Active
       </label>
     </div>
-    <button type="submit" class="btn btn-primary" >Save</button>
+    <button type="submit" class="btn btn-primary" data-testid="save-button"  >Save</button>
   </form> 
-  <button type="submit" class="btn btn-secondary"  [routerLink] ="['/users']">Cancel</button>
+  <button type="submit" class="btn btn-secondary"  data-testid="cancel-button"  [routerLink] ="['/users']">Cancel</button>
 </div>

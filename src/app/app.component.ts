@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   <nav class='navbar navbar-expand navbar-light bg-light'>
       <a class='navbar-brand'>{{pageTitle}}</a>
       <ul class='nav nav-pills'>
-        <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/users']">User List</a></li>
+        <li><a class='nav-link' data-testid="user-list" routerLinkActive='active' [routerLink]="['/users']"> User List </a></li>
       </ul>
   </nav>
   <div class='container'>
