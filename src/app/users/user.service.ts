@@ -9,7 +9,7 @@ import { IUser } from './user';
     providedIn: 'root'
 })
 export class UserService {
-    private userUrl = 'https://be-the-qa-api.herokuapp.com/users'
+    private userUrl = 'https://be-the-qa-api-fake-production.up.railway.app/users'
 
     constructor(private http: HttpClient){
 
